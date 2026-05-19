@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/claude-redesign/test-2-redesigned.html" }
+  ]
+}
