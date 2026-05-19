@@ -1,5 +1,9 @@
+<!-- Google Fonts — chargé via <link> pour éviter le blocage du rendu CSS causé par @import -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap">
+
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap');
 
   /* ── Variables ── */
   .fn-beloeil-2026 {
@@ -799,88 +803,111 @@
   }
 
   /* ═══════════════════════════════════════
-     RESPONSIVE — 820px
+     RESPONSIVE — 820px (tablette)
   ═══════════════════════════════════════ */
   @media (max-width: 820px) {
-    .fn-beloeil-2026 .fn-artist { grid-template-columns: 1fr; }
+    /* Sections */
+    .fn-beloeil-2026 .fn-section { padding: clamp(36px, 6vw, 64px) 0; }
 
+    /* Programme */
     .fn-beloeil-2026 .fn-day { grid-template-columns: 1fr; }
+    .fn-beloeil-2026 .fn-day-photo {
+      order: -1;
+      min-height: 0;
+      max-height: 260px;
+      height: 260px;
+    }
+    .fn-beloeil-2026 .fn-day-content { padding: clamp(18px, 4vw, 28px); }
 
-    .fn-beloeil-2026 .fn-day-photo { min-height: 220px; order: -1; }
-
+    /* Artiste */
+    .fn-beloeil-2026 .fn-artist { grid-template-columns: 1fr; }
     .fn-beloeil-2026 .fn-artist-photo {
       clip-path: none;
       margin-right: 0;
-      min-height: 280px;
+      min-height: 0;
+      max-height: 300px;
+      height: 300px;
     }
-
     .fn-beloeil-2026 .fn-artist-content::after {
-      top: 0; left: 0;
       width: 100%; height: 5px;
+      top: 0; right: unset;
     }
+    .fn-beloeil-2026 .fn-artist-content::before { font-size: 200px; }
 
+    /* Infos pratiques */
     .fn-beloeil-2026 .fn-practical { grid-template-columns: 1fr; }
 
+    /* Galerie */
     .fn-beloeil-2026 .fn-gallery {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto;
     }
-
     .fn-beloeil-2026 .fn-gallery-tall,
-    .fn-beloeil-2026 .fn-gallery-wide {
-      grid-row: unset;
-      grid-column: unset;
-    }
+    .fn-beloeil-2026 .fn-gallery-wide { grid-row: unset; grid-column: unset; }
+    .fn-beloeil-2026 .fn-gallery-item { aspect-ratio: 4 / 3; height: auto; }
 
-    .fn-beloeil-2026 .fn-gallery-item { aspect-ratio: 4 / 3; }
+    /* Partenaires */
+    .fn-beloeil-2026 .fn-logo-row { gap: 18px 28px; }
   }
 
   /* ═══════════════════════════════════════
-     RESPONSIVE — 640px (day cards)
+     RESPONSIVE — 640px (cartes de journée)
   ═══════════════════════════════════════ */
   @media (max-width: 640px) {
     .fn-beloeil-2026 .fn-day-cards { grid-template-columns: 1fr; }
   }
 
   /* ═══════════════════════════════════════
-     RESPONSIVE — 560px
+     RESPONSIVE — 480px (mobile)
   ═══════════════════════════════════════ */
-  @media (max-width: 560px) {
-    .fn-beloeil-2026 {
-      --fn-width: min(100% - 24px, 1120px);
-    }
+  @media (max-width: 480px) {
+    .fn-beloeil-2026 { --fn-width: min(100% - 24px, 1120px); }
 
-    /* Hero */
-    .fn-beloeil-2026 .fn-hero-inner {
-      padding-bottom: 80px;
-    }
-
-    /* Fix fn-full on narrow screens */
+    /* Empêcher débordement horizontal */
     .fn-beloeil-2026 .fn-full {
       width: 100%;
       margin-right: 0;
       margin-left: 0;
     }
 
-    /* Program events */
-    .fn-beloeil-2026 .fn-event { grid-template-columns: 1fr; gap: 4px; }
+    /* Sections */
+    .fn-beloeil-2026 .fn-section { padding: 32px 0; }
 
-    /* Artist — no clip on mobile */
-    .fn-beloeil-2026 .fn-artist-photo { clip-path: none; margin-right: 0; }
+    /* Hero */
+    .fn-beloeil-2026 .fn-hero { padding-top: 40px; }
+    .fn-beloeil-2026 .fn-hero-inner { padding-bottom: 60px; }
+    .fn-beloeil-2026 .fn-fleur-icon { font-size: 40px; margin-bottom: 12px; }
 
-    /* Gallery single column */
-    .fn-beloeil-2026 .fn-gallery { grid-template-columns: 1fr; }
+    /* Titres */
+    .fn-beloeil-2026 h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+    .fn-beloeil-2026 h3 { font-size: 1.1rem; }
 
-    /* Logo row wrap tighter */
-    .fn-beloeil-2026 .fn-logo-row { gap: 20px 24px; }
-    .fn-beloeil-2026 .fn-logo-lg { height: 44px; }
-    .fn-beloeil-2026 .fn-logo-md { height: 36px; }
+    /* Programme */
+    .fn-beloeil-2026 .fn-day-photo { max-height: 200px; height: 200px; }
+    .fn-beloeil-2026 .fn-event { grid-template-columns: 1fr; gap: 3px; }
+    .fn-beloeil-2026 .fn-time { font-size: 0.9rem; }
 
-    /* Day card head */
-    .fn-beloeil-2026 .fn-day-card-num { font-size: 2.4rem; }
+    /* Cartes de journée */
+    .fn-beloeil-2026 .fn-day-card-num { font-size: 2.2rem; }
+    .fn-beloeil-2026 .fn-day-card-body { padding: 16px; }
+    .fn-beloeil-2026 .fn-day-card-head { padding: 14px 16px; }
 
-    /* Partner list single column */
-    .fn-beloeil-2026 .fn-partner-list { flex-direction: column; align-items: center; text-align: center; }
+    /* Artiste */
+    .fn-beloeil-2026 .fn-artist-photo { max-height: 240px; height: 240px; }
+    .fn-beloeil-2026 .fn-artist-content { padding: 24px 20px; }
+    .fn-beloeil-2026 .fn-artist-content::before { font-size: 140px; }
+
+    /* Galerie — 1 colonne */
+    .fn-beloeil-2026 .fn-gallery { grid-template-columns: 1fr; gap: 6px; }
+    .fn-beloeil-2026 .fn-gallery-item { aspect-ratio: 16 / 9; }
+
+    /* Partenaires */
+    .fn-beloeil-2026 .fn-logo-row { gap: 14px 20px; }
+    .fn-beloeil-2026 .fn-logo-lg { height: 38px; }
+    .fn-beloeil-2026 .fn-partner-list { flex-direction: column; align-items: center; }
+
+    /* Footer */
+    .fn-beloeil-2026 .fn-footer-wave { padding: 36px 0 48px; }
   }
 </style>
 
@@ -1148,8 +1175,8 @@
         </div>
         <div class="fn-practical-item">
           <span class="fn-practical-icon"></span>
-          <h3>Information</h3>
-          <p>Consultez le site Web de la Ville pour les mises à jour avant votre visite.</p>
+          <h3>Activités familiales</h3>
+          <p>Mur d'escalade, trampolines, ateliers culturels, maquillage et animations pour tous les âges — une journée complète en famille.</p>
         </div>
       </div>
     </div>
@@ -1216,7 +1243,7 @@
   </div>
 
   <!-- ═══ FOOTER WAVE — bleu ciel avec fleurs de lys ═══ -->
-  <div class="fn-footer-wave fn-full fn-reveal">
+  <div class="fn-footer-wave fn-full">
     <div class="fn-wrap">
       <span aria-hidden="true" style="display:block; font-size:clamp(36px,4vw,52px); line-height:1; color:rgba(255,255,255,0.75); margin:0 auto 18px;">⚜</span>
       <h2>Bonne Fête nationale&nbsp;!</h2>
@@ -1230,16 +1257,27 @@
 (function () {
   var root = document.querySelector('.fn-beloeil-2026');
   if (!root) return;
-  root.classList.add('has-js');
+
   if (!('IntersectionObserver' in window)) {
     root.querySelectorAll('.fn-reveal').forEach(function (el) { el.classList.add('fn-visible'); });
     return;
   }
+
+  /* Threshold 0 = déclenche dès qu'un pixel entre dans le viewport */
   var obs = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('fn-visible'); obs.unobserve(e.target); }
+      if (e.isIntersecting) {
+        e.target.classList.add('fn-visible');
+        obs.unobserve(e.target);
+      }
     });
-  }, { threshold: 0.10 });
-  root.querySelectorAll('.fn-reveal').forEach(function (el) { obs.observe(el); });
+  }, { threshold: 0 });
+
+  /* Ajouter has-js seulement après le premier rendu visuel pour éviter
+     le gel de page causé par opacity:0 sur tout le contenu */
+  requestAnimationFrame(function () {
+    root.classList.add('has-js');
+    root.querySelectorAll('.fn-reveal').forEach(function (el) { obs.observe(el); });
+  });
 })();
 </script>
