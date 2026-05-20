@@ -42,6 +42,164 @@
   .fn-beloeil-2026 h3,
   .fn-beloeil-2026 p { margin-top: 0; }
 
+  /* ── Bouton CTA ── */
+  .fn-beloeil-2026 .fn-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    padding: 0 36px;
+    min-height: 58px;
+    background: #c63872;
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    box-shadow: 0 4px 24px rgba(198, 56, 114, 0.35);
+    transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .fn-beloeil-2026 .fn-btn-primary:hover,
+  .fn-beloeil-2026 .fn-btn-primary:focus-visible {
+    background: #a82e61;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(198, 56, 114, 0.45);
+  }
+
+  /* ── Scroll indicator ── */
+  .fn-beloeil-2026 .fn-scroll-hint {
+    display: block;
+    margin: 18px auto 0;
+    width: 36px;
+    color: var(--fn-navy);
+    opacity: 0.45;
+    animation: fn-bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes fn-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(9px); }
+  }
+
+  /* ── Countdown ── */
+  .fn-beloeil-2026 .fn-countdown {
+    position: relative;
+    background: linear-gradient(135deg, rgba(106,184,232,0.78) 0%, rgba(53,117,196,0.80) 42%, rgba(26,64,128,0.82) 100%);
+    padding: clamp(44px, 7vw, 72px) 0;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .fn-beloeil-2026 .fn-countdown[hidden] { display: none; }
+
+  .fn-beloeil-2026 .fn-countdown-units {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: clamp(5px, 1.2vw, 12px);
+  }
+
+  .fn-beloeil-2026 .fn-countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* Jours séparé visuellement du reste */
+  .fn-beloeil-2026 .fn-countdown-unit--days {
+    margin-right: clamp(10px, 2.2vw, 24px);
+  }
+
+  .fn-beloeil-2026 .fn-countdown-digits {
+    display: flex;
+    gap: 5px;
+  }
+
+  .fn-beloeil-2026 .fn-countdown-digit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(50px, 8.5vw, 86px);
+    height: clamp(64px, 11vw, 108px);
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.26);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #091c3a;
+    font-size: clamp(2rem, 5.2vw, 4.6rem);
+    font-weight: 900;
+    line-height: 1;
+    border-radius: 14px;
+    box-shadow:
+      0 4px 24px rgba(0,0,0,0.22),
+      inset 0 1px 0 rgba(255,255,255,0.42),
+      inset 0 -1px 0 rgba(0,0,0,0.10);
+  }
+
+  .fn-beloeil-2026 .fn-countdown-unit-label {
+    color: rgba(255,255,255,0.68);
+    font-size: 0.64rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .fn-beloeil-2026 .fn-countdown-sep {
+    color: rgba(255,255,255,0.32);
+    font-size: clamp(2rem, 5.2vw, 4.6rem);
+    font-weight: 900;
+    line-height: 1;
+    padding-top: clamp(10px, 1.8vw, 20px);
+    user-select: none;
+  }
+
+  /* Conteneur du dernier groupe (SECONDES + badge) */
+  .fn-beloeil-2026 .fn-countdown-last-wrap {
+    position: relative;
+  }
+
+  /* Les cartes de chiffres passent devant le badge */
+  .fn-beloeil-2026 .fn-countdown-unit {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Badge circulaire — absolu, derrière les chiffres */
+  .fn-beloeil-2026 .fn-countdown-badge {
+    position: absolute;
+    top: clamp(-38px, -4.5vw, -28px);
+    right: clamp(-38px, -4.5vw, -28px);
+    width: clamp(96px, 12vw, 130px);
+    height: clamp(96px, 12vw, 130px);
+    z-index: 0;
+    opacity: 0.75;
+    animation: fn-badge-spin 28s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes fn-badge-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  @media (max-width: 640px) {
+    .fn-beloeil-2026 .fn-countdown-badge { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .fn-beloeil-2026 .fn-countdown-digit {
+      width: 37px;
+      height: 47px;
+      font-size: 1.55rem;
+      border-radius: 9px;
+    }
+    .fn-beloeil-2026 .fn-countdown-sep { font-size: 1.55rem; padding-top: 9px; }
+    .fn-beloeil-2026 .fn-countdown-units { gap: 4px; }
+    .fn-beloeil-2026 .fn-countdown-unit--days { margin-right: 7px; }
+  }
+
   /* ── Layout helpers ── */
   .fn-beloeil-2026 .fn-full {
     width: 100vw;
@@ -59,18 +217,13 @@
   ═══════════════════════════════════════ */
   .fn-beloeil-2026 .fn-hero {
     position: relative;
-    background: #29bde8;
+    background:
+      url('../assets/images/identite-visuelle-qc/textures/FN26_Fond_1920x1080.png')
+      center / cover no-repeat,
+      #8dd9f5;
     overflow: hidden;
-    padding: clamp(52px, 8vw, 96px) 0 0;
+    padding: clamp(20px, 3vw, 36px) 0 0;
     text-align: center;
-  }
-
-  .fn-beloeil-2026 .fn-hero-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
   }
 
   .fn-beloeil-2026 .fn-hero-inner {
@@ -78,43 +231,80 @@
     z-index: 1;
     width: var(--fn-width);
     margin: 0 auto;
-    padding-bottom: clamp(60px, 9vw, 110px);
+    padding-bottom: clamp(12px, 2vw, 24px);
   }
 
-  .fn-beloeil-2026 .fn-fleur-icon {
+  /* Logo officiel Fête nationale du Québec */
+  .fn-beloeil-2026 .fn-official-logo {
     display: block;
-    font-size: clamp(48px, 6vw, 72px);
-    line-height: 1;
-    color: var(--fn-white);
-    text-align: center;
+    width: clamp(240px, 34vw, 440px);
     margin: 0 auto 20px;
-    font-style: normal;
   }
 
+  /* h1 accessible (sr-only) — le logo officiel assure la représentation visuelle */
   .fn-beloeil-2026 h1 {
-    margin: 0 auto 12px;
-    color: var(--fn-navy);
-    font-size: clamp(2.8rem, 8vw, 7rem);
-    font-weight: 900;
-    line-height: 0.92;
-    max-width: 14ch;
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
   }
 
-  .fn-beloeil-2026 h1 em {
-    display: block;
-    color: var(--fn-white);
-    font-size: 0.52em;
-    font-style: normal;
+  .fn-beloeil-2026 .fn-kicker {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 10px 24px;
+    background: var(--fn-sky-lt);
+    color: var(--fn-sky);
+    font-size: 1.1rem;
     font-weight: 800;
-    letter-spacing: 0.01em;
-    line-height: 1.1;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
   .fn-beloeil-2026 .fn-hero-sub {
-    max-width: 560px;
-    margin: 18px auto 0;
-    color: var(--fn-white);
-    font-size: clamp(1rem, 1.8vw, 1.18rem);
+    max-width: 640px;
+    margin: 20px auto 0;
+    color: var(--fn-navy);
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    opacity: 0.78;
+  }
+
+  /* ── Styles programme (texte intro + tip maillots) ── */
+  .fn-beloeil-2026 .fn-programme-lead {
+    color: rgba(26,74,150,0.85);
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    max-width: 640px;
+    margin-bottom: clamp(28px, 4vw, 44px);
+  }
+
+  .fn-beloeil-2026 .fn-day-tip {
+    margin-top: 18px;
+    padding: 12px 16px;
+    background: rgba(255, 208, 37, 0.18);
+    border-left: 3px solid #c63872;
+    color: #1a4a96;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  /* Texture officielle bas du hero */
+  .fn-beloeil-2026 .fn-hero-texture {
+    position: relative;
+    z-index: 1;
+    line-height: 0;
+    margin-top: clamp(16px, 3vw, 32px);
+  }
+
+  .fn-beloeil-2026 .fn-hero-texture img {
+    display: block;
+    width: 100%;
+    max-height: 160px;
+    object-fit: cover;
+    object-position: top center;
   }
 
   .fn-beloeil-2026 .fn-kicker {
@@ -224,25 +414,56 @@
   }
 
   /* ═══════════════════════════════════════
-     PROGRAMME — two day cards
+     PROGRAMME — section sombre immersive
   ═══════════════════════════════════════ */
+  .fn-beloeil-2026 .fn-programme-section {
+    position: relative;
+    padding: clamp(52px, 8vw, 96px) 0;
+  }
+
+  .fn-beloeil-2026 .fn-programme-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      url('../assets/images/identite-visuelle-qc/textures/FN26_Fond_1920x1080.png')
+      center / cover no-repeat;
+    transform: scaleY(-1);
+    z-index: 0;
+  }
+
+  .fn-beloeil-2026 .fn-programme-section > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .fn-beloeil-2026 .fn-programme-section h2 {
+    color: #1a4a96;
+    margin-bottom: clamp(32px, 5vw, 56px);
+  }
+
   .fn-beloeil-2026 .fn-program {
     display: grid;
-    gap: 0;
+    gap: 3px;
   }
 
   .fn-beloeil-2026 .fn-day {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
     gap: 0;
-    background: var(--fn-white);
-    border: 1px solid var(--fn-border);
-    margin-bottom: 24px;
     overflow: hidden;
+    background: rgba(255,255,255,0.04);
+    border-left: 4px solid rgba(255,255,255,0.08);
+    transition: border-color 300ms ease, background 300ms ease;
+  }
+
+  .fn-beloeil-2026 .fn-day:hover {
+    background: rgba(255,255,255,0.07);
+    border-left-color: #c63872;
   }
 
   .fn-beloeil-2026 .fn-day-content {
-    padding: clamp(26px, 4vw, 44px);
+    padding: clamp(26px, 4vw, 48px);
   }
 
   .fn-beloeil-2026 .fn-day-header {
@@ -250,14 +471,14 @@
     align-items: baseline;
     flex-wrap: wrap;
     gap: 10px 20px;
-    margin-bottom: 22px;
-    padding-bottom: 18px;
-    border-bottom: 2px solid var(--fn-border);
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
   }
 
   .fn-beloeil-2026 .fn-date {
-    color: var(--fn-navy);
-    font-size: clamp(2.4rem, 7vw, 5rem);
+    color: #c63872;
+    font-size: clamp(2.8rem, 8vw, 6rem);
     font-weight: 900;
     line-height: 0.88;
   }
@@ -270,32 +491,34 @@
 
   .fn-beloeil-2026 .fn-hours-badge {
     display: inline-block;
-    padding: 4px 10px;
-    background: var(--fn-sky-lt);
+    padding: 4px 12px;
+    background: rgba(0,161,225,0.18);
     color: var(--fn-sky);
     font-size: 0.82rem;
     font-weight: 800;
+    border: 1px solid rgba(0,161,225,0.35);
   }
 
-  .fn-beloeil-2026 .fn-events { display: grid; gap: 14px; }
+  .fn-beloeil-2026 .fn-events { display: grid; gap: 18px; }
 
   .fn-beloeil-2026 .fn-event {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 110px 1fr;
     gap: 16px;
     align-items: start;
   }
 
   .fn-beloeil-2026 .fn-time {
-    color: var(--fn-navy);
-    font-size: 1rem;
+    color: #c63872;
+    font-size: 1.1rem;
     font-weight: 900;
   }
 
   .fn-beloeil-2026 .fn-event p {
     margin-bottom: 0;
-    color: var(--fn-ink);
+    color: rgba(26,74,150,0.88);
     font-size: 1rem;
+    line-height: 1.5;
   }
 
   .fn-beloeil-2026 .fn-event p strong {
@@ -304,20 +527,37 @@
 
   /* Day photo side */
   .fn-beloeil-2026 .fn-day-photo {
+    position: relative;
     min-height: 260px;
     overflow: hidden;
-    background: var(--fn-sky-lt);
+    background: #041f30;
   }
 
   .fn-beloeil-2026 .fn-day-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 500ms ease;
+    filter: brightness(0.85) saturate(0.9);
+    transition: transform 500ms ease, filter 500ms ease;
+  }
+
+  /* Overlay dramatique */
+  .fn-beloeil-2026 .fn-day-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(8, 47, 70, 0.55) 0%,
+      rgba(8, 47, 70, 0.10) 60%,
+      transparent 100%
+    );
+    pointer-events: none;
   }
 
   .fn-beloeil-2026 .fn-day:hover .fn-day-photo img {
     transform: scale(1.04);
+    filter: brightness(0.95) saturate(1.05);
   }
 
   /* ═══════════════════════════════════════
@@ -618,43 +858,50 @@
   }
 
   /* ═══════════════════════════════════════
-     WAVE FOOTER — like poster bottom
+     FOOTER — cohérent avec section programme
   ═══════════════════════════════════════ */
-  .fn-beloeil-2026 .fn-footer-wave {
-    position: relative;
-    overflow: hidden;
-    padding: clamp(52px, 8vw, 96px) 0 clamp(60px, 9vw, 110px);
-    background: var(--fn-sky);
+  .fn-beloeil-2026 .fn-footer-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
     text-align: center;
+    background:
+      url('../assets/images/identite-visuelle-qc/textures/FN26_Fond_1920x1080.png')
+      center / cover no-repeat,
+      #8dd9f5;
+    overflow: hidden;
   }
 
-  /* Floating fleurs de lys in background */
-  .fn-beloeil-2026 .fn-footer-wave::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 64 80'%3E%3Cpath d='M32 4c-2 4-6 6-10 5 1 4 4 7 8 8-1 3-3 5-6 5 2 3 5 4 8 3l-2 8h4l-2-8c3 1 6 0 8-3-3 0-5-2-6-5 4-1 7-4 8-8-4 1-8-1-10-5z' fill='rgba(255,255,255,0.12)'/%3E%3C/svg%3E");
-    background-size: 80px 80px;
-    pointer-events: none;
+  .fn-beloeil-2026 .fn-footer-cta .fn-wrap {
+    padding: clamp(32px, 5vw, 56px) 0;
   }
 
-  .fn-beloeil-2026 .fn-footer-wave .fn-wrap {
-    position: relative;
-    z-index: 1;
+  .fn-beloeil-2026 .fn-footer-cta h2 {
+    color: var(--fn-navy);
+    font-size: clamp(1.8rem, 4.5vw, 3.4rem);
+    margin-bottom: 12px;
   }
 
-  .fn-beloeil-2026 .fn-footer-wave h2 {
-    color: var(--fn-white);
-    font-size: clamp(1.6rem, 4vw, 3.2rem);
-    margin-bottom: 10px;
+  .fn-beloeil-2026 .fn-footer-cta p {
+    color: var(--fn-navy);
+    opacity: 0.72;
+    max-width: 480px;
+    margin: 0 auto;
+    font-size: 1.05rem;
   }
 
-  .fn-beloeil-2026 .fn-footer-wave p {
-    color: rgba(255,255,255,0.88);
-    max-width: 500px;
-    margin: 0 auto 28px;
-    font-size: 1rem;
+  .fn-beloeil-2026 .fn-footer-texture {
+    line-height: 0;
+    flex-shrink: 0;
+  }
+
+  .fn-beloeil-2026 .fn-footer-texture img {
+    display: block;
+    width: 100%;
+    height: 110px;
+    object-fit: contain;
+    object-position: bottom center;
   }
 
   /* ═══════════════════════════════════════
@@ -810,7 +1057,8 @@
     .fn-beloeil-2026 .fn-section { padding: clamp(36px, 6vw, 64px) 0; }
 
     /* Programme */
-    .fn-beloeil-2026 .fn-day { grid-template-columns: 1fr; }
+    .fn-beloeil-2026 .fn-programme-section { padding: clamp(36px, 6vw, 64px) 0; }
+    .fn-beloeil-2026 .fn-day { grid-template-columns: 1fr; border-left-width: 0; border-top: 4px solid rgba(255,255,255,0.08); }
     .fn-beloeil-2026 .fn-day-photo {
       order: -1;
       min-height: 0;
@@ -882,6 +1130,9 @@
     .fn-beloeil-2026 h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
     .fn-beloeil-2026 h3 { font-size: 1.1rem; }
 
+    /* Hero */
+    .fn-beloeil-2026 .fn-official-logo { width: clamp(160px, 50vw, 220px); }
+
     /* Programme */
     .fn-beloeil-2026 .fn-day-photo { max-height: 200px; height: 200px; }
     .fn-beloeil-2026 .fn-event { grid-template-columns: 1fr; gap: 3px; }
@@ -907,7 +1158,8 @@
     .fn-beloeil-2026 .fn-partner-list { flex-direction: column; align-items: center; }
 
     /* Footer */
-    .fn-beloeil-2026 .fn-footer-wave { padding: 36px 0 48px; }
+    .fn-beloeil-2026 .fn-footer-cta { padding: 40px 0 32px; }
+    .fn-beloeil-2026 .fn-footer-cta::before { height: 120px; background-size: auto 120px; }
   }
 </style>
 
@@ -917,77 +1169,17 @@
   <!-- ═══ HERO ═══ -->
   <div class="fn-hero fn-full">
 
-    <!-- Fond inspiré du bas du poster officiel : dégradé bleu, bulles, fleurs de lys, vagues -->
-    <svg class="fn-hero-bg" aria-hidden="true" viewBox="0 0 1440 560"
-         preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="fn-hero-grad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="#5cd4f5"/>
-          <stop offset="55%"  stop-color="#1ab3e8"/>
-          <stop offset="100%" stop-color="#0095d0"/>
-        </linearGradient>
-      </defs>
-
-      <!-- Fond bleu -->
-      <rect width="1440" height="560" fill="url(#fn-hero-grad)"/>
-
-      <!-- Bulles translucides — scattered -->
-      <circle cx="1050" cy="95"  r="92"  fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="2"/>
-      <circle cx="1050" cy="95"  r="60"  fill="rgba(255,255,255,0.10)"/>
-      <circle cx="1230" cy="60"  r="48"  fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.30)" stroke-width="1.5"/>
-      <circle cx="1340" cy="190" r="70"  fill="rgba(255,255,255,0.09)"/>
-      <circle cx="870"  cy="230" r="54"  fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
-      <circle cx="680"  cy="130" r="36"  fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
-      <circle cx="780"  cy="320" r="68"  fill="rgba(255,255,255,0.08)"/>
-      <circle cx="380"  cy="180" r="44"  fill="rgba(255,255,255,0.11)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
-      <circle cx="180"  cy="280" r="78"  fill="rgba(255,255,255,0.07)"/>
-      <circle cx="520"  cy="380" r="50"  fill="none" stroke="rgba(255,255,255,0.20)" stroke-width="1.5"/>
-      <circle cx="1150" cy="380" r="42"  fill="rgba(255,255,255,0.10)"/>
-      <circle cx="1390" cy="380" r="55"  fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.20)" stroke-width="1.5"/>
-      <circle cx="100"  cy="440" r="46"  fill="rgba(255,255,255,0.12)"/>
-      <circle cx="650"  cy="450" r="38"  fill="rgba(255,255,255,0.09)"/>
-
-      <!-- Fleurs de lys — marine foncé, bleu moyen et blanc, tailles variées -->
-      <!-- Groupe gauche -->
-      <text x="72"   y="552" font-size="168" font-family="serif,Georgia,Times" fill="#00284f" opacity="0.92" text-anchor="middle">⚜</text>
-      <text x="270"  y="530" font-size="104" font-family="serif,Georgia,Times" fill="#003d6b" opacity="0.78" text-anchor="middle">⚜</text>
-
-      <!-- Groupe centre-gauche -->
-      <text x="490"  y="556" font-size="140" font-family="serif,Georgia,Times" fill="#00284f" opacity="0.86" text-anchor="middle">⚜</text>
-
-      <!-- Groupe centre -->
-      <text x="720"  y="534" font-size="96"  font-family="serif,Georgia,Times" fill="#0066a0" opacity="0.68" text-anchor="middle">⚜</text>
-      <text x="860"  y="552" font-size="122" font-family="serif,Georgia,Times" fill="#003d6b" opacity="0.80" text-anchor="middle">⚜</text>
-
-      <!-- Groupe droite — fleurs blanches comme dans le poster -->
-      <text x="1080" y="540" font-size="88"  font-family="serif,Georgia,Times" fill="#ffffff"  opacity="0.88" text-anchor="middle">⚜</text>
-      <text x="1240" y="558" font-size="156" font-family="serif,Georgia,Times" fill="#ffffff"  opacity="0.82" text-anchor="middle">⚜</text>
-      <text x="1400" y="534" font-size="100" font-family="serif,Georgia,Times" fill="#00284f" opacity="0.72" text-anchor="middle">⚜</text>
-
-      <!-- Vague arrière (bleu moyen) -->
-      <path d="M0 460 C180 430 360 475 540 455 C720 435 900 475 1080 455
-               C1260 435 1380 462 1440 455 L1440 560 L0 560 Z"
-            fill="rgba(0,140,200,0.45)"/>
-
-      <!-- Vague avant (blanc semi-transparent) -->
-      <path d="M0 498 C200 472 400 508 600 490 C800 472 1000 508 1200 490
-               C1320 478 1400 500 1440 492 L1440 560 L0 560 Z"
-            fill="rgba(255,255,255,0.55)"/>
-
-      <!-- Bas en blanc pour transition douce vers la section suivante -->
-      <path d="M0 530 C240 514 480 542 720 525 C960 508 1200 538 1440 522
-               L1440 560 L0 560 Z"
-            fill="rgba(255,255,255,0.85)"/>
-    </svg>
-
     <div class="fn-hero-inner">
-      <span class="fn-fleur-icon" aria-hidden="true">⚜</span>
+      <!-- Logo officiel Fête nationale du Québec 2026 -->
+      <img class="fn-official-logo"
+           src="../assets/images/identite-visuelle-qc/logos/Logo_FN_Web-Couleur.svg"
+           alt="Fête nationale du Québec 2026">
 
       <p class="fn-kicker">Beloeil · 23 et 24 juin 2026</p>
 
       <h1 id="fn-title">
         Fête nationale
-        <em>du Québec</em>
+        <em>à Beloeil</em>
       </h1>
 
       <p class="fn-hero-sub">
@@ -995,85 +1187,102 @@
         animations, activités familiales, feux d'artifice et spectacle de
         Joyeux Calvaire en hommage aux Cowboys Fringants.
       </p>
-    </div>
 
-    <!-- Vague de transition vers la section intro bleu pâle -->
-    <div class="fn-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0 27C240 54 480 0 720 27C960 54 1200 0 1440 27V54H0V27Z" fill="#e8f6fd"/>
+      <!-- CTA principal -->
+      <a href="#fn-programmation" class="fn-btn-primary">
+        Voir la programmation
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M8 12L2 6l1.4-1.4L8 9.2l4.6-4.6L14 6z"/>
+        </svg>
+      </a>
+
+      <!-- Scroll indicator -->
+      <svg class="fn-scroll-hint" aria-hidden="true" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="17" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+        <path d="M12 16l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
+
+    <!-- Texture officielle Fête nationale — fleurs de lys et bulles -->
+    <div class="fn-hero-texture" aria-hidden="true">
+      <img src="../assets/images/identite-visuelle-qc/textures/FN26_Texture_N1.png"
+           alt="" loading="eager">
+    </div>
+
   </div>
 
-  <!-- ═══ INTRO — deux journées ═══ -->
-  <div class="fn-section fn-section-sky fn-full" style="padding-bottom: 0;">
+  <!-- ═══ COUNTDOWN ═══ -->
+  <div class="fn-countdown fn-full" id="fn-countdown-bar" aria-live="polite">
     <div class="fn-wrap">
-      <p class="fn-lead fn-reveal">
-        Un rendez-vous rassembleur pour célébrer la culture québécoise, la musique
-        et les moments en famille au cœur de Beloeil.
-      </p>
+      <div class="fn-countdown-units">
 
-      <div class="fn-day-cards fn-reveal" aria-label="Résumé des deux journées">
-
-        <!-- 23 juin -->
-        <div class="fn-day-card">
-          <div class="fn-day-card-head">
-            <span class="fn-day-card-num">23</span>
-            <div class="fn-day-card-meta">
-              <span class="fn-day-card-month">juin 2026</span>
-              <span class="fn-day-card-hours">20 h à 23 h</span>
-            </div>
+        <!-- Jours — séparé visuellement (pas de deux-points) -->
+        <div class="fn-countdown-unit fn-countdown-unit--days">
+          <div class="fn-countdown-digits">
+            <span class="fn-countdown-digit" id="fn-days-tens">0</span>
+            <span class="fn-countdown-digit" id="fn-days-ones">0</span>
           </div>
-          <div class="fn-day-card-body">
-            <div class="fn-day-card-location">
-              <svg viewBox="0 0 16 20" fill="currentColor" aria-hidden="true"><path d="M8 0C4.69 0 2 2.69 2 6c0 4.5 6 14 6 14s6-9.5 6-14c0-3.31-2.69-6-6-6zm0 8.5A2.5 2.5 0 1 1 8 3.5a2.5 2.5 0 0 1 0 5z"/></svg>
-              Vieux-Beloeil
-            </div>
-            <ul class="fn-day-card-list">
-              <li>Animations de rue et musique d'ambiance</li>
-              <li>Feux d'artifice à 22 h — en partenariat avec Mont-Saint-Hilaire</li>
-            </ul>
-          </div>
+          <span class="fn-countdown-unit-label">Jours</span>
         </div>
 
-        <!-- 24 juin -->
-        <div class="fn-day-card">
-          <div class="fn-day-card-head">
-            <span class="fn-day-card-num">24</span>
-            <div class="fn-day-card-meta">
-              <span class="fn-day-card-month">juin 2026</span>
-              <span class="fn-day-card-hours">14 h à 19 h</span>
-            </div>
+        <div class="fn-countdown-unit">
+          <div class="fn-countdown-digits">
+            <span class="fn-countdown-digit" id="fn-hours-tens">0</span>
+            <span class="fn-countdown-digit" id="fn-hours-ones">0</span>
           </div>
-          <div class="fn-day-card-body">
-            <div class="fn-day-card-location">
-              <svg viewBox="0 0 16 20" fill="currentColor" aria-hidden="true"><path d="M8 0C4.69 0 2 2.69 2 6c0 4.5 6 14 6 14s6-9.5 6-14c0-3.31-2.69-6-6-6zm0 8.5A2.5 2.5 0 1 1 8 3.5a2.5 2.5 0 0 1 0 5z"/></svg>
-              Parc du Petit-Rapide
-            </div>
-            <ul class="fn-day-card-list">
-              <li>Activités pour toute la famille : escalade, trampolines, jeux gonflables d'eau, plage de mousse</li>
-              <li>Ateliers culturels, organismes, maquillage</li>
-              <li>Discours patriotique et spectacle de Joyeux Calvaire à 17 h</li>
-            </ul>
-            <div class="fn-day-card-tip">
-              👕 Apportez vos maillots ou vêtements de rechange — activités d'eau prévues !
-            </div>
+          <span class="fn-countdown-unit-label">Heures</span>
+        </div>
+
+        <span class="fn-countdown-sep" aria-hidden="true">:</span>
+
+        <div class="fn-countdown-unit">
+          <div class="fn-countdown-digits">
+            <span class="fn-countdown-digit" id="fn-minutes-tens">0</span>
+            <span class="fn-countdown-digit" id="fn-minutes-ones">0</span>
           </div>
+          <span class="fn-countdown-unit-label">Minutes</span>
+        </div>
+
+        <span class="fn-countdown-sep" aria-hidden="true">:</span>
+
+        <!-- Dernier groupe : SECONDES + badge derrière -->
+        <div class="fn-countdown-last-wrap">
+          <div class="fn-countdown-unit">
+            <div class="fn-countdown-digits">
+              <span class="fn-countdown-digit" id="fn-seconds-tens">0</span>
+              <span class="fn-countdown-digit" id="fn-seconds-ones">0</span>
+            </div>
+            <span class="fn-countdown-unit-label">Secondes</span>
+          </div>
+
+          <!-- Badge circulaire — derrière les chiffres via z-index -->
+          <svg class="fn-countdown-badge" aria-hidden="true" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Cercle horaire partant du sommet (12h) -->
+              <path id="fn-badge-path"
+                d="M 75,20
+                   A 55,55 0 0,1 130,75
+                   A 55,55 0 0,1 75,130
+                   A 55,55 0 0,1 20,75
+                   A 55,55 0 0,1 75,20"/>
+            </defs>
+            <text font-size="10" font-weight="900" letter-spacing="7" fill="white" font-family="Montserrat,sans-serif">
+              <textPath href="#fn-badge-path">ON COMPTE LES JOURS · </textPath>
+            </text>
+          </svg>
         </div>
 
       </div>
     </div>
-
-    <div class="fn-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0 24C360 48 720 0 1080 24C1260 36 1380 18 1440 24V48H0V24Z" fill="#ffffff"/>
-      </svg>
-    </div>
   </div>
 
   <!-- ═══ PROGRAMME ═══ -->
-  <div id="fn-programmation" class="fn-section">
+  <div id="fn-programmation" class="fn-programme-section fn-full">
     <div class="fn-wrap">
+      <p class="fn-programme-lead fn-reveal">
+        Un rendez-vous rassembleur pour célébrer la culture québécoise, la musique
+        et les moments en famille au cœur de Beloeil.
+      </p>
       <h2 class="fn-reveal">Programmation</h2>
       <div class="fn-program">
 
@@ -1124,6 +1333,9 @@
                 <strong class="fn-time">17 h</strong>
                 <p>Discours patriotique et spectacle de Joyeux Calvaire.</p>
               </div>
+            </div>
+            <div class="fn-day-tip">
+              👕 Apportez vos maillots ou vêtements de rechange — activités d'eau prévues !
             </div>
           </div>
           <div class="fn-day-photo">
@@ -1192,19 +1404,19 @@
       </div>
       <div class="fn-gallery fn-reveal">
         <div class="fn-gallery-item fn-gallery-tall">
-          <img src="../assets/images/joyeux-calvaire/joyeux_calvaire2.jpg" alt="Spectacle Joyeux Calvaire — ambiance">
+          <img src="../assets/images/joyeux-calvaire/joyeux_calvaire2.jpg" alt="Spectacle Joyeux Calvaire — ambiance" loading="lazy" decoding="async">
         </div>
         <div class="fn-gallery-item">
-          <img src="../assets/images/joyeux-calvaire/joyeux_calvaire5.jpg" alt="Le chanteur de Joyeux Calvaire en performance">
+          <img src="../assets/images/joyeux-calvaire/joyeux_calvaire5.jpg" alt="Le chanteur de Joyeux Calvaire en performance" loading="lazy" decoding="async">
         </div>
         <div class="fn-gallery-item">
-          <img src="../assets/images/joyeux-calvaire/joyeux_calvaire6.jpg" alt="Joyeux Calvaire sur scène">
+          <img src="../assets/images/joyeux-calvaire/joyeux_calvaire6.jpg" alt="Joyeux Calvaire sur scène" loading="lazy" decoding="async">
         </div>
         <div class="fn-gallery-item fn-gallery-wide">
-          <img src="../assets/images/joyeux-calvaire/joyeux_calvaire1.jpg" alt="Foule et ambiance festive">
+          <img src="../assets/images/joyeux-calvaire/joyeux_calvaire1.jpg" alt="Foule et ambiance festive" loading="lazy" decoding="async">
         </div>
         <div class="fn-gallery-item">
-          <img src="../assets/images/joyeux-calvaire/joyeux_calvaire4.jpg" alt="Joyeux Calvaire en concert">
+          <img src="../assets/images/joyeux-calvaire/joyeux_calvaire4.jpg" alt="Joyeux Calvaire en concert" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -1242,14 +1454,14 @@
     </div>
   </div>
 
-  <!-- ═══ FOOTER WAVE — bleu ciel avec fleurs de lys ═══ -->
-  <div class="fn-footer-wave fn-full">
+  <!-- ═══ FOOTER ═══ -->
+  <div class="fn-footer-cta fn-full">
     <div class="fn-wrap">
-      <span aria-hidden="true" style="display:block; font-size:clamp(36px,4vw,52px); line-height:1; color:rgba(255,255,255,0.75); margin:0 auto 18px;">⚜</span>
       <h2>Bonne Fête nationale&nbsp;!</h2>
       <p>Rendez-vous les 23 et 24 juin 2026 à Beloeil pour célébrer ensemble.</p>
     </div>
   </div>
+
 
 </section>
 
@@ -1257,6 +1469,40 @@
 (function () {
   var root = document.querySelector('.fn-beloeil-2026');
   if (!root) return;
+
+  /* ── Countdown ── */
+  (function () {
+    var bar = document.getElementById('fn-countdown-bar');
+    if (!bar) return;
+
+    var target = new Date('2026-06-23T20:00:00');
+
+    function pad(n) { return ('0' + n).slice(-2); }
+
+    function set(id, val) {
+      var el = document.getElementById(id);
+      if (el && el.textContent !== val) el.textContent = val;
+    }
+
+    function update() {
+      var diff = target - new Date();
+      if (diff <= 0) { bar.hidden = true; clearInterval(timer); return; }
+
+      var total = Math.floor(diff / 1000);
+      var d = pad(Math.floor(total / 86400));
+      var h = pad(Math.floor((total % 86400) / 3600));
+      var m = pad(Math.floor((total % 3600) / 60));
+      var s = pad(total % 60);
+
+      set('fn-days-tens',    d[0]); set('fn-days-ones',    d[1]);
+      set('fn-hours-tens',   h[0]); set('fn-hours-ones',   h[1]);
+      set('fn-minutes-tens', m[0]); set('fn-minutes-ones', m[1]);
+      set('fn-seconds-tens', s[0]); set('fn-seconds-ones', s[1]);
+    }
+
+    update();
+    var timer = setInterval(update, 1000);
+  })();
 
   if (!('IntersectionObserver' in window)) {
     root.querySelectorAll('.fn-reveal').forEach(function (el) { el.classList.add('fn-visible'); });
