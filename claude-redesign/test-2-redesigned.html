@@ -68,9 +68,20 @@
   }
 
   /* ── Scroll indicator ── */
+  .fn-beloeil-2026 .fn-hero-cta-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 28px;
+  }
+
+  .fn-beloeil-2026 .fn-hero-cta-wrap .fn-btn-primary {
+    margin-top: 0;
+  }
+
   .fn-beloeil-2026 .fn-scroll-hint {
     display: block;
-    margin: 18px auto 0;
+    margin: 16px 0 0;
     width: 36px;
     color: var(--fn-navy);
     opacity: 0.45;
@@ -222,8 +233,7 @@
       center / cover no-repeat,
       #8dd9f5;
     overflow: hidden;
-    padding: clamp(20px, 3vw, 36px) 0 0;
-    text-align: center;
+    padding: clamp(18px, 2.5vw, 28px) 0 0;
   }
 
   .fn-beloeil-2026 .fn-hero-inner {
@@ -231,17 +241,35 @@
     z-index: 1;
     width: var(--fn-width);
     margin: 0 auto;
-    padding-bottom: clamp(12px, 2vw, 24px);
+    padding-bottom: clamp(8px, 1.2vw, 14px);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(48px, 7vw, 96px);
+    align-items: center;
+  }
+
+  .fn-beloeil-2026 .fn-hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fn-beloeil-2026 .fn-hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: clamp(24px, 5vw, 72px);
+    padding-top: clamp(20px, 3vw, 40px);
   }
 
   /* Logo officiel Fête nationale du Québec */
   .fn-beloeil-2026 .fn-official-logo {
     display: block;
-    width: clamp(240px, 34vw, 440px);
-    margin: 0 auto 20px;
+    width: clamp(190px, 24vw, 340px);
+    margin: 0 0 14px;
   }
 
-  /* h1 accessible (sr-only) — le logo officiel assure la représentation visuelle */
+  /* h1 accessible (sr-only) */
   .fn-beloeil-2026 h1 {
     position: absolute;
     width: 1px; height: 1px;
@@ -265,19 +293,22 @@
   }
 
   .fn-beloeil-2026 .fn-hero-sub {
-    max-width: 640px;
-    margin: 20px auto 0;
+    max-width: 500px;
+    margin: 0 0 0;
     color: var(--fn-navy);
-    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-    opacity: 0.78;
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    opacity: 0.82;
   }
 
   /* ── Styles programme (texte intro + tip maillots) ── */
   .fn-beloeil-2026 .fn-programme-lead {
-    color: rgba(26,74,150,0.85);
-    font-size: clamp(1rem, 1.6vw, 1.15rem);
-    max-width: 640px;
-    margin-bottom: clamp(28px, 4vw, 44px);
+    color: rgba(26,74,150,0.92);
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.45;
+    max-width: 680px;
+    margin-bottom: clamp(20px, 3vw, 36px);
   }
 
   .fn-beloeil-2026 .fn-day-tip {
@@ -296,13 +327,13 @@
     position: relative;
     z-index: 1;
     line-height: 0;
-    margin-top: clamp(16px, 3vw, 32px);
+    margin-top: clamp(6px, 1vw, 12px);
   }
 
   .fn-beloeil-2026 .fn-hero-texture img {
     display: block;
     width: 100%;
-    max-height: 160px;
+    max-height: 220px;
     object-fit: cover;
     object-position: top center;
   }
@@ -608,16 +639,7 @@
 
   /* Fleur de lys décorative en filigrane dans le fond */
   .fn-beloeil-2026 .fn-artist-content::before {
-    content: "⚜";
-    position: absolute;
-    bottom: -0.18em;
-    right: -0.06em;
-    font-size: clamp(160px, 22vw, 280px);
-    font-family: serif, Georgia;
-    color: rgba(255,255,255,0.06);
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
+    display: none;
   }
 
   /* Trait d'accent bleu ciel */
@@ -836,9 +858,14 @@
     transform: translateY(-2px);
   }
 
+  .fn-beloeil-2026 .fn-logo-xl { height: 80px; }
   .fn-beloeil-2026 .fn-logo-lg { height: 60px; }
   .fn-beloeil-2026 .fn-logo-md { height: 46px; }
   .fn-beloeil-2026 .fn-logo-sm { height: 36px; }
+
+  .fn-beloeil-2026 .fn-logo-placeholder.fn-logo-xl { min-height: 72px; padding: 14px 28px; font-size: 0.80rem; }
+  .fn-beloeil-2026 .fn-logo-placeholder.fn-logo-lg { min-height: 56px; padding: 12px 22px; font-size: 0.72rem; }
+  .fn-beloeil-2026 .fn-logo-placeholder.fn-logo-md { min-height: 44px; padding: 10px 18px; font-size: 0.64rem; }
 
   .fn-beloeil-2026 .fn-partner-list {
     display: flex;
@@ -902,6 +929,72 @@
     height: 110px;
     object-fit: contain;
     object-position: bottom center;
+  }
+
+  /* ═══════════════════════════════════════
+     SOUS-SECTIONS PROGRAMME (24 juin)
+  ═══════════════════════════════════════ */
+  .fn-beloeil-2026 .fn-day-sub {
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px solid rgba(26,74,150,0.12);
+  }
+
+  .fn-beloeil-2026 .fn-day-sub-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.67rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #c63872;
+    margin-bottom: 12px;
+  }
+
+  .fn-beloeil-2026 .fn-day-sub-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(198,56,114,0.20);
+  }
+
+  .fn-beloeil-2026 .fn-day-tips {
+    display: grid;
+    gap: 5px;
+    margin-top: 4px;
+  }
+
+  .fn-beloeil-2026 .fn-day-tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 9px 12px;
+    background: rgba(255,255,255,0.55);
+    border-left: 3px solid #c63872;
+    color: #1a4a96;
+    font-size: 0.86rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  /* ─── Logo placeholder ─── */
+  .fn-beloeil-2026 .fn-logo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background: rgba(0,79,121,0.06);
+    border: 1.5px dashed rgba(0,79,121,0.28);
+    color: var(--fn-muted);
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    border-radius: 3px;
+    white-space: nowrap;
+    cursor: default;
+    user-select: none;
   }
 
   /* ═══════════════════════════════════════
@@ -1056,6 +1149,17 @@
     /* Sections */
     .fn-beloeil-2026 .fn-section { padding: clamp(36px, 6vw, 64px) 0; }
 
+    /* Hero — tablette */
+    .fn-beloeil-2026 .fn-hero-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 14px;
+    }
+    .fn-beloeil-2026 .fn-hero-left,
+    .fn-beloeil-2026 .fn-hero-right { align-items: center; }
+    .fn-beloeil-2026 .fn-official-logo { margin: 0 auto 12px; }
+    .fn-beloeil-2026 .fn-hero-sub { text-align: center; }
+
     /* Programme */
     .fn-beloeil-2026 .fn-programme-section { padding: clamp(36px, 6vw, 64px) 0; }
     .fn-beloeil-2026 .fn-day { grid-template-columns: 1fr; border-left-width: 0; border-top: 4px solid rgba(255,255,255,0.08); }
@@ -1121,17 +1225,21 @@
     /* Sections */
     .fn-beloeil-2026 .fn-section { padding: 32px 0; }
 
-    /* Hero */
-    .fn-beloeil-2026 .fn-hero { padding-top: 40px; }
-    .fn-beloeil-2026 .fn-hero-inner { padding-bottom: 60px; }
-    .fn-beloeil-2026 .fn-fleur-icon { font-size: 40px; margin-bottom: 12px; }
+    /* Hero — 1 colonne mobile */
+    .fn-beloeil-2026 .fn-hero-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 12px;
+    }
+    .fn-beloeil-2026 .fn-hero-left,
+    .fn-beloeil-2026 .fn-hero-right { align-items: center; }
+    .fn-beloeil-2026 .fn-official-logo { margin: 0 auto 12px; width: clamp(160px, 48vw, 220px); }
+    .fn-beloeil-2026 .fn-hero-sub { text-align: center; }
+    .fn-beloeil-2026 .fn-scroll-hint { margin-left: auto; margin-right: auto; }
 
     /* Titres */
     .fn-beloeil-2026 h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
     .fn-beloeil-2026 h3 { font-size: 1.1rem; }
-
-    /* Hero */
-    .fn-beloeil-2026 .fn-official-logo { width: clamp(160px, 50vw, 220px); }
 
     /* Programme */
     .fn-beloeil-2026 .fn-day-photo { max-height: 200px; height: 200px; }
@@ -1170,37 +1278,39 @@
   <div class="fn-hero fn-full">
 
     <div class="fn-hero-inner">
-      <!-- Logo officiel Fête nationale du Québec 2026 -->
-      <img class="fn-official-logo"
-           src="../assets/images/identite-visuelle-qc/logos/Logo_FN_Web-Couleur.svg"
-           alt="Fête nationale du Québec 2026">
 
-      <p class="fn-kicker">Beloeil · 23 et 24 juin 2026</p>
+      <!-- Colonne gauche : logo officiel + date/lieu -->
+      <div class="fn-hero-left">
+        <img class="fn-official-logo"
+             src="../assets/images/identite-visuelle-qc/logos/Logo_FN_Web-Couleur.svg"
+             alt="Fête nationale du Québec 2026">
+        <p class="fn-kicker">Beloeil · 23 et 24 juin 2026</p>
+      </div>
 
-      <h1 id="fn-title">
-        Fête nationale
-        <em>à Beloeil</em>
-      </h1>
+      <!-- Colonne droite : accroche + CTA -->
+      <div class="fn-hero-right">
+        <h1 id="fn-title">Fête nationale à Beloeil</h1>
 
-      <p class="fn-hero-sub">
-        Deux jours de festivités au Vieux-Beloeil et au parc du Petit-Rapide :
-        animations, activités familiales, feux d'artifice et spectacle de
-        Joyeux Calvaire en hommage aux Cowboys Fringants.
-      </p>
+        <p class="fn-hero-sub">
+          Deux jours de festivités au Vieux-Beloeil et au parc du Petit-Rapide :
+          animations, activités familiales, feux d'artifice et spectacle de
+          Joyeux Calvaire en hommage aux Cowboys Fringants.
+        </p>
 
-      <!-- CTA principal -->
-      <a href="#fn-programmation" class="fn-btn-primary">
-        Voir la programmation
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-          <path d="M8 12L2 6l1.4-1.4L8 9.2l4.6-4.6L14 6z"/>
-        </svg>
-      </a>
+        <div class="fn-hero-cta-wrap">
+          <a href="#fn-programmation" class="fn-btn-primary">
+            Voir la programmation
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 12L2 6l1.4-1.4L8 9.2l4.6-4.6L14 6z"/>
+            </svg>
+          </a>
+          <svg class="fn-scroll-hint" aria-hidden="true" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="17" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+            <path d="M12 16l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
 
-      <!-- Scroll indicator -->
-      <svg class="fn-scroll-hint" aria-hidden="true" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="18" cy="18" r="17" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
-        <path d="M12 16l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
     </div>
 
     <!-- Texture officielle Fête nationale — fleurs de lys et bulles -->
@@ -1209,71 +1319,6 @@
            alt="" loading="eager">
     </div>
 
-  </div>
-
-  <!-- ═══ COUNTDOWN ═══ -->
-  <div class="fn-countdown fn-full" id="fn-countdown-bar" aria-live="polite">
-    <div class="fn-wrap">
-      <div class="fn-countdown-units">
-
-        <!-- Jours — séparé visuellement (pas de deux-points) -->
-        <div class="fn-countdown-unit fn-countdown-unit--days">
-          <div class="fn-countdown-digits">
-            <span class="fn-countdown-digit" id="fn-days-tens">0</span>
-            <span class="fn-countdown-digit" id="fn-days-ones">0</span>
-          </div>
-          <span class="fn-countdown-unit-label">Jours</span>
-        </div>
-
-        <div class="fn-countdown-unit">
-          <div class="fn-countdown-digits">
-            <span class="fn-countdown-digit" id="fn-hours-tens">0</span>
-            <span class="fn-countdown-digit" id="fn-hours-ones">0</span>
-          </div>
-          <span class="fn-countdown-unit-label">Heures</span>
-        </div>
-
-        <span class="fn-countdown-sep" aria-hidden="true">:</span>
-
-        <div class="fn-countdown-unit">
-          <div class="fn-countdown-digits">
-            <span class="fn-countdown-digit" id="fn-minutes-tens">0</span>
-            <span class="fn-countdown-digit" id="fn-minutes-ones">0</span>
-          </div>
-          <span class="fn-countdown-unit-label">Minutes</span>
-        </div>
-
-        <span class="fn-countdown-sep" aria-hidden="true">:</span>
-
-        <!-- Dernier groupe : SECONDES + badge derrière -->
-        <div class="fn-countdown-last-wrap">
-          <div class="fn-countdown-unit">
-            <div class="fn-countdown-digits">
-              <span class="fn-countdown-digit" id="fn-seconds-tens">0</span>
-              <span class="fn-countdown-digit" id="fn-seconds-ones">0</span>
-            </div>
-            <span class="fn-countdown-unit-label">Secondes</span>
-          </div>
-
-          <!-- Badge circulaire — derrière les chiffres via z-index -->
-          <svg class="fn-countdown-badge" aria-hidden="true" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <!-- Cercle horaire partant du sommet (12h) -->
-              <path id="fn-badge-path"
-                d="M 75,20
-                   A 55,55 0 0,1 130,75
-                   A 55,55 0 0,1 75,130
-                   A 55,55 0 0,1 20,75
-                   A 55,55 0 0,1 75,20"/>
-            </defs>
-            <text font-size="10" font-weight="900" letter-spacing="7" fill="white" font-family="Montserrat,sans-serif">
-              <textPath href="#fn-badge-path">ON COMPTE LES JOURS · </textPath>
-            </text>
-          </svg>
-        </div>
-
-      </div>
-    </div>
   </div>
 
   <!-- ═══ PROGRAMME ═══ -->
@@ -1316,26 +1361,42 @@
           <div class="fn-day-content">
             <div class="fn-day-header">
               <div class="fn-date">24 juin</div>
-              <span class="fn-place">parc du Petit-Rapide</span>
+              <span class="fn-place">Parc du Petit-Rapide</span>
               <span class="fn-hours-badge">14 h à 19 h</span>
             </div>
-            <div class="fn-events">
-              <div class="fn-event">
-                <strong class="fn-time">14 h à 19 h</strong>
-                <p>
-                  Mur d'escalade, trampolines,
-                  <strong>jeux gonflables d'eau et plage de mousse&nbsp;!</strong>
-                  Jeux, animations, organismes, ateliers culturels et maquillage.
-                </p>
-              </div>
-              <div class="fn-event">
-                <strong class="fn-time">17 h</strong>
-                <p>Discours patriotique et spectacle de Joyeux Calvaire.</p>
+
+            <!-- Activités familiales -->
+            <div class="fn-day-sub">
+              <div class="fn-day-sub-title">Activités familiales</div>
+              <div class="fn-events">
+                <div class="fn-event">
+                  <strong class="fn-time">14 h – 19 h</strong>
+                  <p>Mur d'escalade, trampolines, <strong>jeux gonflables d'eau et plage de mousse&nbsp;!</strong> Jeux, animations, organismes, ateliers culturels et maquillage.</p>
+                </div>
               </div>
             </div>
-            <div class="fn-day-tip">
-              👕 Apportez vos maillots ou vêtements de rechange — activités d'eau prévues !
+
+            <!-- Spectacle vedette -->
+            <div class="fn-day-sub">
+              <div class="fn-day-sub-title">Spectacle vedette</div>
+              <div class="fn-events">
+                <div class="fn-event">
+                  <strong class="fn-time">17 h</strong>
+                  <p>Discours patriotique suivi du spectacle de <strong>Joyeux Calvaire</strong> — hommage aux Cowboys Fringants.</p>
+                </div>
+              </div>
             </div>
+
+            <!-- À ne pas oublier -->
+            <div class="fn-day-sub">
+              <div class="fn-day-sub-title">À ne pas oublier</div>
+              <div class="fn-day-tips">
+                <div class="fn-day-tip-item">👕 Apportez vos maillots ou vêtements de rechange — activités d'eau prévues !</div>
+                <div class="fn-day-tip-item">🪑 Apportez vos chaises de plein air — spectacle en plein air.</div>
+                <div class="fn-day-tip-item">💧 Apportez de l'eau — restez bien hydratés !</div>
+              </div>
+            </div>
+
           </div>
           <div class="fn-day-photo">
             <img src="../assets/images/4a955322-8acc-4150-b085-b6e4e3191253.jpeg"
@@ -1344,13 +1405,9 @@
         </div>
 
       </div>
-    </div>
-  </div>
 
-  <!-- ═══ ARTISTE ═══ -->
-  <div class="fn-section">
-    <div class="fn-wrap fn-reveal">
-      <div class="fn-artist">
+      <!-- Joyeux Calvaire — intégré dans la programmation -->
+      <div class="fn-artist fn-reveal" style="margin-top: clamp(24px, 4vw, 40px);">
         <div class="fn-artist-photo">
           <img src="../assets/images/joyeux-calvaire/joyeux_calvaire2.jpg"
                alt="Joyeux Calvaire sur scène devant le public — bras levé">
@@ -1372,30 +1429,7 @@
           </p>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- ═══ INFOS PRATIQUES ═══ -->
-  <div class="fn-section">
-    <div class="fn-wrap">
-      <h2 class="fn-reveal">Infos pratiques</h2>
-      <div class="fn-practical fn-reveal">
-        <div class="fn-practical-item">
-          <span class="fn-practical-icon"></span>
-          <h3>Activités d'eau</h3>
-          <p>Des jeux gonflables d'eau et une plage de mousse sont prévus le 24 juin. Apportez vos maillots ou vêtements de rechange.</p>
-        </div>
-        <div class="fn-practical-item">
-          <span class="fn-practical-icon"></span>
-          <h3>Sur place</h3>
-          <p>Des kiosques alimentaires et des rafraîchissements seront disponibles pendant l'événement.</p>
-        </div>
-        <div class="fn-practical-item">
-          <span class="fn-practical-icon"></span>
-          <h3>Activités familiales</h3>
-          <p>Mur d'escalade, trampolines, ateliers culturels, maquillage et animations pour tous les âges — une journée complète en famille.</p>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -1436,26 +1470,80 @@
         <p>La programmation est rendue possible grâce à la collaboration de partenaires publics, communautaires et privés.</p>
       </div>
 
-      <div class="fn-logo-row fn-reveal" aria-label="Logos des partenaires disponibles">
-        <img class="fn-logo-lg" src="../assets/images/partners/metro.png"
-             alt="Metro Famille Riendeau">
-        <img class="fn-logo-lg" src="../assets/images/partners/desjardins.png"
-             alt="Caisse Desjardins Beloeil-Mont-Saint-Hilaire">
-        <img class="fn-logo-sm" src="../assets/images/partners/yves-francois-blanchet.png"
-             alt="Yves-François Blanchet">
+      <!-- Rangée 1 — Très gros -->
+      <div class="fn-logo-row fn-reveal" aria-label="Partenaires principaux">
+        <div class="fn-logo-placeholder fn-logo-xl" role="img" aria-label="Gouvernement du Québec">Gouvernement du Québec</div>
+        <div class="fn-logo-placeholder fn-logo-xl" role="img" aria-label="Société Saint-Jean-Baptiste">Société Saint-Jean-Baptiste</div>
+        <div class="fn-logo-placeholder fn-logo-xl" role="img" aria-label="Ville de Mont-Saint-Hilaire">Ville de Mont-Saint-Hilaire</div>
+        <div class="fn-logo-placeholder fn-logo-xl" role="img" aria-label="Gouvernement du Canada">Gouvernement du Canada</div>
+        <img class="fn-logo-xl" src="../assets/images/partners/metro.png" alt="Metro Plus Famille Riendeau">
       </div>
 
-      <ul class="fn-partner-list fn-reveal">
-        <li>Hydro-Québec</li>
-        <li>Gouvernement du Québec</li>
-        <li>Société Saint-Jean-Baptiste</li>
-        <li>Mouvement national des Québécoises et Québécois</li>
-        <li>Ville de Mont-Saint-Hilaire</li>
-        <li>VR St-Cyr</li>
-        <li>Mathieu Carrière RE/MAX</li>
-        <li>Simon Jolin-Barrette</li>
-        <li>Gouvernement du Canada</li>
-      </ul>
+      <!-- Rangée 2 — Gros -->
+      <div class="fn-logo-row fn-reveal" aria-label="Partenaires secondaires" style="margin-top: 16px;">
+        <div class="fn-logo-placeholder fn-logo-lg" role="img" aria-label="VR St-Cyr">VR St-Cyr</div>
+        <img class="fn-logo-lg" src="../assets/images/partners/desjardins.png" alt="Caisse Desjardins Beloeil–Mont-Saint-Hilaire">
+        <div class="fn-logo-placeholder fn-logo-lg" role="img" aria-label="Mathieu Carrière RE/MAX">Mathieu Carrière RE/MAX</div>
+        <div class="fn-logo-placeholder fn-logo-lg" role="img" aria-label="Paroisse Saint-Matthieu">Paroisse Saint-Matthieu</div>
+        <div class="fn-logo-placeholder fn-logo-md" role="img" aria-label="Yves-François Blanchet">Yves-François Blanchet</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ COUNTDOWN ═══ -->
+  <div class="fn-countdown fn-full" id="fn-countdown-bar" aria-live="polite">
+    <div class="fn-wrap">
+      <div class="fn-countdown-units">
+
+        <div class="fn-countdown-unit fn-countdown-unit--days">
+          <div class="fn-countdown-digits">
+            <span class="fn-countdown-digit" id="fn-days-tens">0</span>
+            <span class="fn-countdown-digit" id="fn-days-ones">0</span>
+          </div>
+          <span class="fn-countdown-unit-label">Jours</span>
+        </div>
+
+        <div class="fn-countdown-unit">
+          <div class="fn-countdown-digits">
+            <span class="fn-countdown-digit" id="fn-hours-tens">0</span>
+            <span class="fn-countdown-digit" id="fn-hours-ones">0</span>
+          </div>
+          <span class="fn-countdown-unit-label">Heures</span>
+        </div>
+
+        <span class="fn-countdown-sep" aria-hidden="true">:</span>
+
+        <div class="fn-countdown-unit">
+          <div class="fn-countdown-digits">
+            <span class="fn-countdown-digit" id="fn-minutes-tens">0</span>
+            <span class="fn-countdown-digit" id="fn-minutes-ones">0</span>
+          </div>
+          <span class="fn-countdown-unit-label">Minutes</span>
+        </div>
+
+        <span class="fn-countdown-sep" aria-hidden="true">:</span>
+
+        <div class="fn-countdown-last-wrap">
+          <div class="fn-countdown-unit">
+            <div class="fn-countdown-digits">
+              <span class="fn-countdown-digit" id="fn-seconds-tens">0</span>
+              <span class="fn-countdown-digit" id="fn-seconds-ones">0</span>
+            </div>
+            <span class="fn-countdown-unit-label">Secondes</span>
+          </div>
+          <svg class="fn-countdown-badge" aria-hidden="true" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path id="fn-badge-path"
+                d="M 75,20 A 55,55 0 0,1 130,75 A 55,55 0 0,1 75,130 A 55,55 0 0,1 20,75 A 55,55 0 0,1 75,20"/>
+            </defs>
+            <text font-size="10" font-weight="900" letter-spacing="7" fill="white" font-family="Montserrat,sans-serif">
+              <textPath href="#fn-badge-path">ON COMPTE LES JOURS · </textPath>
+            </text>
+          </svg>
+        </div>
+
+      </div>
     </div>
   </div>
 
